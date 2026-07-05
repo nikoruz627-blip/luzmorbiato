@@ -31,7 +31,7 @@ body{
 .background{
     position:fixed;
     inset:0;
-    background:url("assets/fondo.jpg") center center;
+    background:url("fondo.jpg") center center;
     background-size:cover;
     filter:blur(10px);
     transform:scale(1.1);
