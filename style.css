@@ -1,0 +1,358 @@
+/* ==========================
+   RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow-x:hidden;
+    font-family:'Poppins',sans-serif;
+}
+
+/* ==========================
+   FONDO
+========================== */
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    background:#111;
+    color:white;
+}
+
+.background{
+    position:fixed;
+    inset:0;
+    background:url("assets/fondo.jpg") center center;
+    background-size:cover;
+    filter:blur(10px);
+    transform:scale(1.1);
+    animation:zoom 18s ease-in-out infinite alternate;
+}
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:
+    linear-gradient(
+        rgba(255,210,225,.35),
+        rgba(255,255,255,.18),
+        rgba(250,210,240,.35)
+    );
+    backdrop-filter:blur(4px);
+}
+
+@keyframes zoom{
+
+    from{
+        transform:scale(1.1);
+    }
+
+    to{
+        transform:scale(1.18);
+    }
+
+}
+
+/* ==========================
+   TARJETA
+========================== */
+
+.card{
+
+    position:relative;
+    z-index:10;
+
+    width:380px;
+    max-width:92%;
+
+    padding:45px 35px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.18);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.35);
+
+    text-align:center;
+
+    animation:fadeUp .8s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(35px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================
+   PERFIL
+========================== */
+
+.profile{
+
+    width:170px;
+    height:170px;
+
+    margin:auto;
+
+    padding:5px;
+
+    border-radius:50%;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ffffff,
+        #ffd4e4,
+        #ffb8d1
+    );
+
+    animation:rotateBorder 6s linear infinite;
+
+}
+
+.profile img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:5px solid white;
+
+}
+
+@keyframes rotateBorder{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+/* ==========================
+   TITULOS
+========================== */
+
+h1{
+
+    margin-top:25px;
+
+    font-family:'Playfair Display',serif;
+
+    font-size:2.2rem;
+
+    color:white;
+
+}
+
+.subtitle{
+
+    margin-top:10px;
+
+    color:#fff;
+
+    opacity:.95;
+
+    font-size:1rem;
+
+}
+
+/* ==========================
+   BOTONES
+========================== */
+
+.buttons{
+
+    margin-top:35px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.btn{
+
+    text-decoration:none;
+
+    color:white;
+
+    padding:18px;
+
+    border-radius:16px;
+
+    font-weight:600;
+
+    background:rgba(255,255,255,.15);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    transition:.35s;
+
+    backdrop-filter:blur(10px);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-5px);
+
+    background:rgba(255,255,255,.28);
+
+    box-shadow:0 12px 35px rgba(0,0,0,.25);
+
+}
+
+.btn i{
+
+    margin-right:10px;
+
+}
+
+/* BOTÓN VIP */
+
+.vip{
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff6fa4,
+        #ff90b5
+    );
+
+    border:none;
+
+    color:white;
+
+}
+
+.vip::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:60%;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+
+    90deg,
+
+    transparent,
+
+    rgba(255,255,255,.7),
+
+    transparent
+
+    );
+
+    transform:skewX(-25deg);
+
+    animation:shine 3.5s infinite;
+
+}
+
+@keyframes shine{
+
+    100%{
+
+        left:160%;
+
+    }
+
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer{
+
+    margin-top:35px;
+
+    font-size:.9rem;
+
+    opacity:.9;
+
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:500px){
+
+.card{
+
+    padding:35px 25px;
+
+}
+
+.profile{
+
+    width:140px;
+    height:140px;
+
+}
+
+h1{
+
+    font-size:1.8rem;
+
+}
+
+.btn{
+
+    padding:16px;
+
+}
+
+}
